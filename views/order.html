@@ -1,0 +1,88 @@
+
+<div class="orderBody">
+
+    <div class = "headOrder">
+        <a ui-sref="main">
+            <span><i class="fa fa-arrow-left fa-2x container icon col-md-1"></i></span>
+        </a>
+        <h4 class="col-md-8">{{movieDetails.Title}}</h4>
+    </div>
+
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="{{movieTrailer}}"></iframe>
+    </div>
+
+    <div class = "container">
+
+        <div class="movieDetailsOrder">
+            <p><span class=" greenColor">{{movieDetails.Genre}}</span><span class="greyColor"> {{movieDetails.Country}}</span></p>
+            <p><span class=" greyColor">Director:</span><span class="greyLightColor"> {{movieDetails.Director}}</span></p>
+            <p><span class=" greyColor" ng-hide="showCast">Cast: {{movieDetails.Actors.substring(0, movieDetails.Actors.indexOf(',') + 7)}}...</span></p>
+            <p class = " greyColor" ng-click="showCast = !showCast" ng-hide="showCast">See full cast  <i class="fa fa-angle-right fa-1x icon" ></i></p>
+        </div>
+        <div class = "Rating">
+            <span class = "greyLightColor">{{movieDetails.imdbRating}}</span></br><span class = "greyColor">imdb</span>
+        </div>
+        <div class = "fullCast" ng-show="showCast">
+            <p>Cast: {{movieDetails.Actors}} <i class="fa fa-angle-up" ng-click="showCast = !showCast" ng-show="showCast"></i></p>
+        </div>
+
+        <div class="review">
+            <h3>Audience review's</h3>
+            <img src="">
+            <p>{{review[0].reviews[0].name}}</p>
+            <p>Recently review: {{review[0].reviews[0].comment}}</p>
+            <button ng-click="showReview = !showReview" ng-hide="showReview">See all reviews<i class="fa fa-angle-down fa-3x"></i></button>
+            <button ng-click="showReview = !showReview" ng-show="showReview">{{review[0].reviews.length}} Users reviews movies<i class="fa fa-angle-up fa-3x"></i></button>
+            <div ng-show="showReview">
+                <P>lame: {{review[0].lame}}</P>
+                <P>wow: {{review[0].wow}}</P>
+                <P>wtf: {{review[0].wtf}}</P>
+                <P>nice: {{review[0].nice}}</P>
+            </div>
+        </div>
+
+        <div class = "orderMovie">
+            <h3>Pick movie seats</h3>
+            <form>
+                <div class="col-xs-7">
+                    <label>Movie theater</label>
+                    <select ng-change = "changeCurrentMovie(currentBranch)"  ng-model='currentBranch' required ng-options="branch._id.branch + ' ' +  branch._id.cinema for branch in movies" ></select>
+                </div>
+
+                <div class="col-xs-4">
+                    <label>Seats</label>
+                    <select>
+                        <option ng-repeat="seatNumber in [1, 2, 3, 4]"> {{ seatNumber }} </option>
+                    </select>
+                </div>
+
+                <div class = "movieTime container">
+                    <label>Seats</label>
+                    <button class="col-xs-3" ng-repeat="timesMovie in CurrentBranch | limitTo: 4"> {{ CurrentBranch[$index]._id.time.substring(11,16)}} </button>
+                </div>
+
+
+                <div class = "auditorium">
+                    <h3>Screen</h3>
+                    <p>Center</p>
+                    <label><input type="radio" name="dc" class="seatCheckbox"> Wasington DC</label>
+                </div>
+
+                <!--<div ng-repeat = "movie in movies">-->
+                    <!--<li>{{movie._id.name}}</li>-->
+                    <!--<li>{{movie._id.time.substring(0,10)}}</li>-->
+                    <!--<li>{{movie._id.time.substring(11,19)}}</li>-->
+                    <!--<li>{{movie._id.auditorium}}</li>-->
+                    <!--<li>{{movie._id.branch}}</li>-->
+                    <!--<li>{{movie._id.seatsLeft}}</li>-->
+                <!--</div>-->
+
+            </form>
+        </div>
+
+
+
+        <a href="payment.html">Buy</a>
+    </div>
+</div>
