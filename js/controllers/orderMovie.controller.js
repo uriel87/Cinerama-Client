@@ -10,10 +10,16 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams',function($s
         name: $stateParams.movie_name
     };
 
-    $http.post("https://cinerama.herokuapp.com/getMovieDetails/", data).success(function(movie, status) {
+    // $http.post("https://cinerama.herokuapp.com/getMovieDetails/", data).success(function(movie, status) {
+    //     $scope.movies = movie;
+    //     console.log($scope.movies);
+    // });
+
+    $http.post("http://localhost:3000/getMovieDetails/" , data).success(function(movie, status) {
         $scope.movies = movie;
         console.log($scope.movies);
     });
+
 
 
     $http.post("https://cinerama.herokuapp.com/getMovie/", data).success(function(movieDetails, status) {
