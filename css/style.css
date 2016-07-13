@@ -26,8 +26,12 @@ ul, li {
 
 
 
-a:hover, a:visited, a:link, a:active {
+a:hover, a:visited, a:link, a:active ,a[ui-sref]:hover, a[ui-sref]:visited, a[ui-sref]:link, a[ui-sref]:active  {
 	text-decoration: none;
+}
+
+a[ui-sref] {
+    text-decoration: none;
 }
 
 a, a:active, a:focus {
@@ -38,7 +42,7 @@ a, a:active, a:focus {
 .productBox {
     display: inline-block;
     width: 30%;
-    height: 50px;
+    height: 150px;
     margin: 50px 5px;
 }
 
@@ -57,7 +61,7 @@ a, a:active, a:focus {
 }
 
 .paymentBody, .userOrderBody {
-    background-color: #f9f7f7;
+    background-color: #f1f1f1;
 }
 
 .paymentBody h5 {
@@ -66,6 +70,8 @@ a, a:active, a:focus {
 
 .formPayment button {
     width: 100%;
+    height: 50px;
+    background-color: #00c588;
 }
 
 .inputPayment {
@@ -108,12 +114,14 @@ a, a:active, a:focus {
 }
 
 .movieOrderBox {
-    background-image: url(../images/bgOrders.jpg);
     background-size: 100% 60px;
     margin: 30px 0;
     height: 100px;
     text-align: center;
     font-size: 20px;
+    color: #0c0c0c;
+    border-radius: 30px;
+    line-height: 32px;
 }
 
 .movieTicketBody {
@@ -137,7 +145,6 @@ a, a:active, a:focus {
 
 .orderBox {
     background-image: url(../images/bgOrders.jpg);
-    height: 300px;
     box-shadow: -5px 5px 15px -5px #888887;
     font-family: 'Open Sans', sans-serif;
 }
@@ -160,8 +167,24 @@ a, a:active, a:focus {
     height: 125px;
 }
 
-.orderBox img {
+.orderBox .col-xs-6 img {
+    width: 40%;
+    margin: auto;
+    left: 25%;
+    position: relative;
+}
+
+.qrImg {
     width: 100%;
+}
+
+
+.orderBox hr {
+    width: 80%;
+    margin: auto;
+    height: 1px;
+    border: none;
+    background-color: #edeaea;
 }
 
 
@@ -187,15 +210,16 @@ a, a:active, a:focus {
 }
 
 
-.loadingdBody {
+.loadingBody {
     background-image: url(../images/loading.jpg);
+    background-repeat: no-repeat;
     width: 100%;
-    height: 1193px;
+    height: 500px;
     background-size: 100%;
 }
 
 
-.loadingdBody img {
+.loadingBody img {
     position: absolute;
     width: 70%;
     top: 150px;
@@ -381,6 +405,8 @@ a, a:active, a:focus {
 
 .mainBody {
     background-color: #f0f0f0;
+    margin: auto;
+    width: 97%;
 }
 
 .headOrder {
@@ -390,8 +416,11 @@ a, a:active, a:focus {
 }
 
 
-.headOrder a{
+.headOrder a, .headOrder button{
     color: #999999;
+    background-color: #000;
+    border: none;
+    height: 100%;
 }
 
 .headOrder h4 {
@@ -425,7 +454,7 @@ a, a:active, a:focus {
 .Rating {
     position: absolute;
     left: 66%;
-    top: 270px;
+    top: 266px;
     font-size: 30px;
     border: 5px solid #008a5f;
     border-radius: 107px;
@@ -447,6 +476,7 @@ a, a:active, a:focus {
 .review {
     border-top: 3px solid #8b8b8b;
     color: #8b8b8b;
+    margin-top: 10px;
 }
 
 .review h3 {
@@ -468,6 +498,7 @@ a, a:active, a:focus {
     height: 50px;
     border: none;
     line-height: 3;
+    margin-bottom: 20px;
 }
 
 
@@ -476,6 +507,16 @@ a, a:active, a:focus {
     text-indent: 10px;
     /*top: 545px;*/
     float: right;
+}
+
+
+.review hr{
+    max-width: 80%;
+    position: relative;
+    left: 60px;
+    bottom: 32px;
+    height: 3px;
+    border: none;
 }
 
 .movieDetailsOrder {
@@ -490,6 +531,7 @@ a, a:active, a:focus {
     border-top: 2px solid #8b8b8b;
     padding-top: 20px;
 }
+
 
 form select {
     background-color: #fff;
@@ -510,10 +552,20 @@ form select {
 }
 
 
-.movieTime button {
+.nonTimeChoose {
     display: inline-block;
     background: transparent;
     color: #8b8b8b;
+    height: 40px;
+    display: block;
+    border: none;
+    font-size: 20px;
+}
+
+.timeChoose {
+    display: inline-block;
+    background: #008a5f;
+    color: #fff;
     height: 40px;
     display: block;
     border: none;
@@ -531,13 +583,52 @@ form select {
 }
 
 
-.seatCheckbox {
+input[type=checkbox]{
     width: 28px;
-    height: 28px;
+    margin: 10px 3px !important;
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+}
+
+#buyBtn {
+    width: 80%;
+    background-color: #fff;
+    color: #00c588;
+    font-size: 35px;
+    margin: 22px 35px;
+    border: none;
+}
+
+.relevantMovie {
+
+}
+
+.relevantMovieBox {
+}
+
+.enjoyLinkToMain {
     position: relative;
-    margin: 20px auto;
-    background: #fcfff4;
-    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-    border-radius: 50px;
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    width: 80%;
+    height: 60px;
+    top: 520px;
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+    border-radius: 30px;
+    background-color: #f5cbc8;
+    font-size: 30px;
+    cursor: default;
+}
+
+.enjoyLinkToMain a {
+    color: #777;
+    text-decoration: none;
+    cursor: default;
+}
+
+a[ui-sref]:hover, a[ui-sref]:visited, a[ui-sref]:link, a[ui-sref]:active
+{
+    text-decoration: none;
 }

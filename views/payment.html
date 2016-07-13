@@ -1,5 +1,10 @@
 ﻿
 <div class="container paymentBody">
+
+    <div class = "headOrder">
+        <button ng-click="returnToOrder()" class="fa fa-arrow-left fa-2x container icon col-md-1"></button>
+    </div>
+
     <form class = "formPayment">
 
         <div class="inputPayment">
@@ -22,8 +27,8 @@
             <input type="text">
         </div>
 
-        <h5 class = "col-xs-7 col-sm-6 col-lg-8"><b>Total: </b>2 tikets </h5>
-        <button type="button" class="btn btn-success">Pay {{getCartPrice()}} NIS</button>
+        <h5 class = "col-xs-7 col-sm-6 col-lg-8"><b>Total: </b>{{Userseats.length}} tikets </h5>
+        <button ng-click="sendOrderRequest()" type="submit" class="btn btn-success payBtn">Pay {{getCartPrice()}} NIS</button>
 
     </form>
 

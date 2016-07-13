@@ -23,8 +23,8 @@
         <div class = "Rating">
             <span class = "greyLightColor">{{movieDetails.imdbRating}}</span></br><span class = "greyColor">imdb</span>
         </div>
-        <div class = "fullCast" ng-show="showCast">
-            <p>Cast: {{movieDetails.Actors}} <i class="fa fa-angle-up" ng-click="showCast = !showCast" ng-show="showCast"></i></p>
+        <div class = "fullCast" ng-show="showCast" ng-click="showCast = !showCast">
+            <p>Cast: {{movieDetails.Actors}} <i class="fa fa-angle-up" ng-show="showCast"></i></p>
         </div>
 
         <div class="review">
@@ -35,10 +35,10 @@
             <button ng-click="showReview = !showReview" ng-hide="showReview">See all reviews<i class="fa fa-angle-down fa-3x"></i></button>
             <button ng-click="showReview = !showReview" ng-show="showReview">{{review[0].reviews.length}} Users reviews movies<i class="fa fa-angle-up fa-3x"></i></button>
             <div ng-show="showReview">
-                <P>lame: {{review[0].lame}}</P>
-                <P>wow: {{review[0].wow}}</P>
-                <P>wtf: {{review[0].wtf}}</P>
-                <P>nice: {{review[0].nice}}</P>
+                <span>lame: {{review[0].lame}}<hr ng-style="showReview && setPercentageReview('lame')"></span>
+                <span>wow: {{review[0].wow}}<hr ng-style= "showReview && setPercentageReview('wow')"></span>
+                <span>wtf: {{review[0].wtf}}<hr ng-style="showReview && setPercentageReview('wtf')"></span>
+                <span>nice: {{review[0].nice}}<hr ng-style="showReview && setPercentageReview('nice')"></span>
             </div>
         </div>
 
@@ -59,30 +59,25 @@
 
                 <div class = "movieTime container">
                     <label>Seats</label>
-                    <button class="col-xs-3" ng-repeat="timesMovie in CurrentBranch | limitTo: 4"> {{ CurrentBranch[$index]._id.time.substring(11,16)}} </button>
+                    <button class="col-xs-3" ng-click = "movieChooseByTime(CurrentBranch[$index]); itemClicked($index)" ng-repeat="timesMovie in CurrentBranch | limitTo: 4" ng-class="$index == selectedIndex ? 'timeChoose': 'nonTimeChoose' "> {{ CurrentBranch[$index]._id.time.substring(11,16)}} </button>
                 </div>
-
 
                 <div class = "auditorium">
                     <h3>Screen</h3>
                     <p>Center</p>
-                    <label><input type="radio" name="dc" class="seatCheckbox"> Wasington DC</label>
+                    <label>
+                        <input type="checkbox" ng-model="isChecked" ng-click = "setSeat(movieChoose._id.seats[$index], isChecked)" ng-disabled="{{movieChoose._id.seats[$index]}}.occupied" class="seatCheckbox" ng-repeat="seats in movieChoose._id.seats">{{movieChoose._id.seats[$index]}}
+                    </label>
                 </div>
 
-                <!--<div ng-repeat = "movie in movies">-->
-                    <!--<li>{{movie._id.name}}</li>-->
-                    <!--<li>{{movie._id.time.substring(0,10)}}</li>-->
-                    <!--<li>{{movie._id.time.substring(11,19)}}</li>-->
-                    <!--<li>{{movie._id.auditorium}}</li>-->
-                    <!--<li>{{movie._id.branch}}</li>-->
-                    <!--<li>{{movie._id.seatsLeft}}</li>-->
-                <!--</div>-->
+                <button id="buyBtn" ng-click="goToPaymentPage()" type="submit">Buy</button>
 
             </form>
+
+            <!--<div class="relevantMovie">-->
+                <!--<div class="relevantMovieBox" ng-repeat="seatNumber in [1, 2, 3, 4]"> {{ seatNumber }}</div>-->
+            <!--</div>-->
         </div>
 
-
-
-        <a href="payment.html">Buy</a>
     </div>
 </div>

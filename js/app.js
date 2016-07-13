@@ -14,8 +14,11 @@ app.config(function($stateProvider, $urlRouterProvider)  {
             controller: 'moviesCtl'
         })
         .state('order', {
-            url: '/order/:movie_name',
+            url: '/order/',
             templateUrl: '../views/order.html',
+            params: {
+                movie_name: null
+            },
             controller: 'orderCtl'
         })
         .state('loading', {
@@ -31,11 +34,20 @@ app.config(function($stateProvider, $urlRouterProvider)  {
         .state('payment', {
             url: '/payment',
             templateUrl: '../views/payment.html',
+            params: {
+                movieDetails: null,
+                seats: null
+            },
             controller: 'paymentCtl'
         })
         .state('movieTicket', {
             url: '/movieTicket',
             templateUrl: '../views/movieTicket.html',
+            params: {
+                movieDetails: null,
+                seats: null,
+                cart: null
+            },
             controller: 'movieTicketCtl'
         })
         .state('myOrders', {

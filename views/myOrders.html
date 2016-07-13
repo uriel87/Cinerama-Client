@@ -5,10 +5,10 @@
     <tab></tab>
     <div class="container userOrderBody">
         <div ng-repeat = "movie in moviesUser">
-            <div class = "movieOrderBox">
+            <div class = "movieOrderBox btnNgRepeat{{$index % 4}}">
+                <li>{{movie._id.name}}</li>
                 <li>{{movie._id.cinema}}</li>
                 <li>{{movie._id.branch}}</li>
-                <li>{{movie._id.name}}</li>
             </div>
         </div>
     </div>

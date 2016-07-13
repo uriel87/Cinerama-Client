@@ -4,7 +4,7 @@
 </header>
 
 <div class = "mainBody">
-    <div ng-repeat = "movie in movies  | orderBy: ['-movies._id.time','movies._id.name'] : 'true'" ng-style="{{poster[$index]}}">
+    <div ng-repeat = "movie in movies  | orderBy: ['-movies._id.time','movies._id.name'] : 'true'"  ng-style="{{poster[$index]}}">
         <div class="movieContextSelect" ng-if="$index < 4">
             <p class="movieTitle">{{movie._id.name}}</p>
             <h3>{{movie._id.time.substring(11,19)}}, <b>{{movie._id.cinema}}, </b>{{movie._id.branch}}</h3>
@@ -17,8 +17,8 @@
         </div>
     </div>
 
-    <div class="movieContextSelectSmall" ng-repeat = "movie in movies | orderBy: ['-movies._id.time'] : 'true'" ng-if="$index > 3 && $index < 8">
-        <a ui-sref="order({movie_name: movie._id.name })">
+    <div class="movieContextSelectSmall" ng-click="goToOrderPage(movie._id.name)" ng-repeat = "movie in movies | orderBy: ['-movies._id.time'] : 'true'" ng-if="$index > 3 && $index < 8">
+        <!--<a ui-sref="order({movie_name: movie._id.name })">-->
             <h4 class="movieTitle">{{movie._id.name}}</h4>
             <img src="{{movie.Poster}}" class="imgBackground">
             <div class="movieDetailsSmallDiv">
@@ -27,6 +27,6 @@
                 <p class="grayColor"><i class="fa fa-map-marker"></i> {{movie._id.branch}}</p>
                 <p class="btnNgRepeatSmall{{$index % 4}}">{{movie._id.seatsLeft}} seats left</p>
             </div>
-        </a>
+        <!--</a>-->
     </div>
 </div>

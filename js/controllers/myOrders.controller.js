@@ -6,10 +6,18 @@ app.controller('movieUserCtl', ['$scope', '$http',function($scope, $http) {
         email: "Yossi.Levy@gmail.com"
     };
 
-    $http.post("https://cinerama.herokuapp.com/getMovieUser/", data).success(function(moviesUser, status) {
+    // $http.post("https://cinerama.herokuapp.com/getMovieUser/", data).success(function(moviesUser, status) {
+    //     $scope.moviesUser = moviesUser;
+    //     console.log($scope.moviesUser);
+    // })
+
+
+    $http.post("http://localhost:3000/getMovieUser/", data).success(function(moviesUser, status) {
         $scope.moviesUser = moviesUser;
         console.log($scope.moviesUser);
     })
+
+
 
 }]);
 

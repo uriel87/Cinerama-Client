@@ -3,7 +3,7 @@
 
 
 
-app.controller('moviesCtl', ['$scope', '$http',function($scope, $http) {
+app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function($scope, $http, $stateParams, $state) {
 
     $scope.movies = [];
     $scope.poster = [];
@@ -35,6 +35,13 @@ app.controller('moviesCtl', ['$scope', '$http',function($scope, $http) {
             console.log($scope.poster[i]);
         })
     }
+
+    $scope.goToOrderPage = function (movieName) {
+        $state.go('order' , {movie_name: movieName});
+    }
+
+
+
 
 }]);
 
