@@ -54,5 +54,10 @@ app.config(function($stateProvider, $urlRouterProvider)  {
             url: '/myOrders',
             templateUrl: '../views/myOrders.html',
             controller: 'movieUserCtl'
+        })
+        .state('pushReview', {
+            url: '/pushReview',
+            templateUrl: '../views/pushReview.html',
+            controller: 'pushReviewCtl'
         });
 });
