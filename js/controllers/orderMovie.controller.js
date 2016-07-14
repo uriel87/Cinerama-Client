@@ -87,38 +87,43 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
         var widthPrecetage;
         var styleHr;
 
+
+        console.log("$scope.review[0].length: " + $scope.review[0].reviews.length);
+
+
         if(!$scope.review[0]) {
             return 0;
         }
 
         switch(reviewType) {
             case "lame":
-                widthPrecetage = ($scope.review[0].lame / $scope.review.length) * 100
+                widthPrecetage = ($scope.review[0].lame / $scope.review[0].reviews.length)  * 80
                 styleHr = {
                     "width" : widthPrecetage + '%',
                     "background-color" : "#00b3fe"
                 }
                 break;
             case "wow":
-                widthPrecetage = ($scope.review[0].wow / $scope.review.length) * 100
+                widthPrecetage = ($scope.review[0].wow / $scope.review[0].reviews.length)  * 80
                 styleHr = {
                     "width" : widthPrecetage + '%',
                     "background-color" : "#963cff"
                 }
                 break;
             case "wtf":
-                widthPrecetage = ($scope.review[0].wtf / $scope.review.length) * 100
+                widthPrecetage = ($scope.review[0].wtf / $scope.review[0].reviews.length)  * 80
                 styleHr = {
                     "width" : widthPrecetage + '%',
                     "background-color" : "#32fd8f"
                 }
                 break;
             default:
-                widthPrecetage = ($scope.review[0].nice / $scope.review.length) * 100
+                widthPrecetage = ($scope.review[0].nice / $scope.review[0].reviews.length)  * 80
                 styleHr = {
                     "width" : widthPrecetage + '%',
                     "background-color" : "#f56d5f"
                 }
+                break;
         }
 
         return styleHr;

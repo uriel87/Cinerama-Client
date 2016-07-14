@@ -672,3 +672,19 @@ a[ui-sref]:hover, a[ui-sref]:visited, a[ui-sref]:link, a[ui-sref]:active
     height: 100px;
     margin: 10px
 }
+
+
+.mainPushReview p {
+    color:#5e5e5e;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+
+#commentUser {
+    display: block;
+    margin: auto;
+    width: 70%;
+    height: 150px;
+    border: 1px solid #2afd9c;
+}

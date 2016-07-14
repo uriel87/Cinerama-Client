@@ -1,6 +1,6 @@
 
 
-app.controller('movieUserCtl', ['$scope', '$http',function($scope, $http) {
+app.controller('movieUserCtl', ['$scope', '$http','$stateParams', '$state',function($scope, $http, $stateParams, $state) {
 
     var data = {
         email: "Yossi.Levy@gmail.com"
@@ -16,6 +16,11 @@ app.controller('movieUserCtl', ['$scope', '$http',function($scope, $http) {
         $scope.moviesUser = moviesUser;
         console.log($scope.moviesUser);
     })
+
+
+    $scope.goToPushReviewPage = function(movieName, user) {
+        $state.go('review' , {movieName: movieName, user: user});
+    };
 
 
 

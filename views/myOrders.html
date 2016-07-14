@@ -4,8 +4,8 @@
 <header>
     <tab></tab>
     <div class="container userOrderBody">
-        <div ng-repeat = "movie in moviesUser">
-            <div class = "movieOrderBox btnNgRepeat{{$index % 4}}">
+        <div ng-repeat = "movie in moviesUser"  >
+            <div class = "movieOrderBox btnNgRepeat{{$index % 4}}" ng-click="goToPushReviewPage(movie._id.name, 'Yossi Levy')">
                 <li>{{movie._id.name}}</li>
                 <li>{{movie._id.cinema}}</li>
                 <li>{{movie._id.branch}}</li>
