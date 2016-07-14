@@ -1,11 +1,8 @@
 
 
 app.controller('reviewCtl', ['$scope', '$http', '$sce','$stateParams', '$state',function($scope, $http, $sce, $stateParams, $state) {
-
-
-    console.log($state.params.movieName);
-    console.log($state.params.user);
-
+    
+    $scope.movieName = $state.params.movieName;
 
     $scope.pushReview = function(review, comment) {
 

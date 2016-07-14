@@ -88,15 +88,16 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
         var styleHr;
 
 
-        console.log("$scope.review[0].length: " + $scope.review[0].reviews.length);
-
-
         if(!$scope.review[0]) {
             return 0;
         }
 
         switch(reviewType) {
             case "lame":
+                if(!$scope.review[0].lame) {
+                    widthPrecetage = 0;
+                    break;
+                }
                 widthPrecetage = ($scope.review[0].lame / $scope.review[0].reviews.length)  * 80
                 styleHr = {
                     "width" : widthPrecetage + '%',
@@ -104,6 +105,10 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
                 }
                 break;
             case "wow":
+                if(!$scope.review[0].wow) {
+                    widthPrecetage = 0;
+                    break;
+                }
                 widthPrecetage = ($scope.review[0].wow / $scope.review[0].reviews.length)  * 80
                 styleHr = {
                     "width" : widthPrecetage + '%',
@@ -111,6 +116,10 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
                 }
                 break;
             case "wtf":
+                if(!$scope.review[0].wtf) {
+                    widthPrecetage = 0;
+                    break;
+                }
                 widthPrecetage = ($scope.review[0].wtf / $scope.review[0].reviews.length)  * 80
                 styleHr = {
                     "width" : widthPrecetage + '%',
@@ -118,6 +127,10 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
                 }
                 break;
             default:
+                if(!$scope.review[0].nice) {
+                    widthPrecetage = 0;
+                    break;
+                }
                 widthPrecetage = ($scope.review[0].nice / $scope.review[0].reviews.length)  * 80
                 styleHr = {
                     "width" : widthPrecetage + '%',
