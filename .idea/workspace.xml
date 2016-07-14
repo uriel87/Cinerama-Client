@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2c9ed9a0-3460-4dbf-a53f-66f5d0d5bbec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/movie.controller.js" afterPath="$PROJECT_DIR$/js/controllers/movie.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/myOrders.controller.js" afterPath="$PROJECT_DIR$/js/controllers/myOrders.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/orderMovie.controller.js" afterPath="$PROJECT_DIR$/js/controllers/orderMovie.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/pruducts.controller.js" afterPath="$PROJECT_DIR$/js/controllers/pruducts.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/review.controller.js" afterPath="$PROJECT_DIR$/js/controllers/review.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/main.html" afterPath="$PROJECT_DIR$/views/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/order.html" afterPath="$PROJECT_DIR$/views/order.html" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -341,12 +334,12 @@
       <workItem from="1468421158296" duration="1086000" />
       <workItem from="1468422268410" duration="6175000" />
       <workItem from="1468430987065" duration="5664000" />
-      <workItem from="1468446983612" duration="22417000" />
+      <workItem from="1468446983612" duration="22967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225685000" />
+    <option name="totallyTimeSpent" value="226235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
