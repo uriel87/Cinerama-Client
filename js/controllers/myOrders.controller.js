@@ -12,7 +12,7 @@ app.controller('movieUserCtl', ['$scope', '$http','$stateParams', '$state',funct
     // })
 
 
-    $http.post("http://localhost:3000/getMovieUser/", data).success(function(moviesUser, status) {
+    $http.post("https://cineramaserver.herokuapp.com/getMovieUser/", data).success(function(moviesUser, status) {
         $scope.moviesUser = moviesUser;
         console.log($scope.moviesUser);
     })

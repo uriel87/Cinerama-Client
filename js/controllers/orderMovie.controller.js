@@ -22,14 +22,14 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
     //     console.log($scope.movies);
     // });
 
-    $http.post("http://localhost:3000/getMovieDetails/" , data).success(function(movie, status) {
+    $http.post("https://cineramaserver.herokuapp.com/getMovieDetails/" , data).success(function(movie, status) {
         $scope.movies = movie;
         console.log($scope.movies);
     });
 
 
 
-    $http.post("https://cinerama.herokuapp.com/getMovie/", data).success(function(movieDetails, status) {
+    $http.post("https://cineramaserver.herokuapp.com/getMovie/", data).success(function(movieDetails, status) {
         $scope.movieDetails = movieDetails;
         console.log($scope.movieDetails);
     });
@@ -44,15 +44,25 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
 
 
 
-    $http.post("https://cinerama.herokuapp.com/getMovieTrailer/", data).success(function(movieTrailer, status) {
+    $http.post("https://cineramaserver.herokuapp.com/getMovieTrailer/", data).success(function(movieTrailer, status) {
         $scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
         console.log("movie trailer " + $scope.movieTrailer);
     });
 
 
-    $http.post("https://cinerama.herokuapp.com/getMovieReview/", data).success(function(review, status) {
+    // $http.post("https://cinerama.herokuapp.com/getMovieReview/", data).success(function(review, status) {
+    //     $scope.review = review;
+    //     $scope.lastComment = review[0].reviews[review[0].reviews.length - 1];
+    //     console.log($scope.review);
+    //     console.log($scope.lastComment);
+    // });
+
+
+    $http.post("https://cineramaserver.herokuapp.com/getMovieReview/", data).success(function(review, status) {
         $scope.review = review;
+        $scope.lastComment = review[0].reviews[review[0].reviews.length - 1];
         console.log($scope.review);
+        console.log($scope.lastComment);
     });
 
 

@@ -6,7 +6,7 @@ app.controller('paymentCtl', ['$scope', '$http','$stateParams', '$state',functio
 	$scope.movieDetails = $state.params.movieDetails;
 	$scope.Userseats = $state.params.seats;
 
-	$http.post("https://cinerama.herokuapp.com/getAllProduct/").success(function (data) {
+	$http.post("https://cineramaserver.herokuapp.com/getAllProduct/").success(function (data) {
 		$scope.products = data;
 		console.log(data);
 	}).error(function () {
@@ -63,7 +63,7 @@ app.controller('paymentCtl', ['$scope', '$http','$stateParams', '$state',functio
 
 			//$state.go('movieTicket' , dataOrder);
 
-            $http.post("https://cinerama.herokuapp.com/setOrderMovie/", orderUser).success(function(res, status) {
+            $http.post("https://cineramaserver.herokuapp.com/setOrderMovie/", orderUser).success(function(res, status) {
 	            console.log(res);
 				$state.go('movieTicket' , dataOrder);
             });

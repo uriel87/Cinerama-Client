@@ -13,7 +13,7 @@ app.controller('reviewCtl', ['$scope', '$http', '$sce','$stateParams', '$state',
             review: review,
         }
 
-        $http.post("https://cinerama.herokuapp.com/pushReview/", dataReview).success(function(res, status) {
+        $http.post("https://cineramaserver.herokuapp.com/pushReview/", dataReview).success(function(res, status) {
             console.log(res);
             $state.go('main');
         });

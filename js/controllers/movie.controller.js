@@ -9,13 +9,13 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
     $scope.poster = [];
     $scope.currentTab = true;
 
-    $http.post("https://cinerama.herokuapp.com/getAllMovies/").success(function (data) {
+    $http.post("https://cineramaserver.herokuapp.com/getAllMovies/").success(function (data) {
 
         for(var i = 0; i < data.length; i++) {
             addDetailsMovie(data, i);
         }
 
-        //console.log($scope.movies);
+        console.log($scope.poster);
 
     }).error(function () {
         return "error was happened or the result is empty";
@@ -23,7 +23,7 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
 
 
     function addDetailsMovie (data, i) {
-        $http.post("https://cinerama.herokuapp.com/getMovie/", {name: data[i]._id.name}).success(function (MovieDetails) {
+        $http.post("https://cineramaserver.herokuapp.com/getMovie/", {name: data[i]._id.name}).success(function (MovieDetails) {
             $scope.movies.push(angular.merge(MovieDetails, data[i]));
             var temp = {
                 "background-image" : "url("+ MovieDetails.Poster +")",
@@ -32,7 +32,7 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
                 "background-position" : "0px 50px"
             }
             $scope.poster[i] = temp;
-            console.log($scope.poster[i]);
+            //console.log($scope.poster[i]);
         })
     }
 
@@ -41,7 +41,7 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
     }
 
     $scope.tabActive = function () {
-        return !currentTab;
+        return !$scope.currentTab;
     }
 
 

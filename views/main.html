@@ -4,7 +4,7 @@
 </header>
 
 <div class = "mainBody">
-    <div ng-repeat = "movie in movies  | orderBy: ['-movies._id.time','movies._id.name'] : 'true'"  ng-style="{{poster[$index]}}">
+    <div ng-repeat = "movie in movies track by $index" ng-style="{{poster[$index]}}">
         <div class="movieContextSelect" ng-if="$index < 4">
             <p class="movieTitle">{{movie._id.name}}</p>
             <h3>{{movie._id.time.substring(11,19)}}, <b>{{movie._id.cinema}}, </b>{{movie._id.branch}}</h3>
@@ -29,4 +29,11 @@
             </div>
         <!--</a>-->
     </div>
+
+
+    <!--<div class="movieContextSelectSmall" ng-repeat = "pos in poster" ng-style="{{poster[$index]}}">-->
+
+    <!--</div>-->
+
+
 </div>
