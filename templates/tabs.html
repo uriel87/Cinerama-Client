@@ -1,12 +1,12 @@
 
-<div>
+
+
     <header>
         <a ui-sref="main">
-            <button class="tab">Screening time</button>
+            <button class="tab" ng-class="{tabActive: currentTab}" ng-click="tabActive()">Screening time</button>
         </a>
 
         <a ui-sref="myOrders">
-            <button class="tab">My orders</button>
+            <button class="tab" ng-class="{tabActive: !currentTab}" ng-click="tabActive()">My orders</button>
         </a>
     </header>
-</div>

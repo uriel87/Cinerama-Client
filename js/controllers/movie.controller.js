@@ -7,7 +7,7 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
 
     $scope.movies = [];
     $scope.poster = [];
-    //$scope.posterTmp = [];
+    $scope.currentTab = true;
 
     $http.post("https://cinerama.herokuapp.com/getAllMovies/").success(function (data) {
 
@@ -40,7 +40,9 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
         $state.go('order' , {movie_name: movieName});
     }
 
-
+    $scope.tabActive = function () {
+        return !currentTab;
+    }
 
 
 }]);

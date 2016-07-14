@@ -273,8 +273,14 @@ a, a:active, a:focus {
     color: #6b6b6b;
     background-color: #fff;
     border: none;
-    border-bottom: 3px solid #762fc8;
+    border-bottom: 3px solid #fff;
     margin-bottom: 3px;
+}
+
+
+
+.tabActive {
+    border-bottom: 3px solid #762fc8;
 }
 
 
