@@ -20,8 +20,15 @@
             <p><span class=" greyColor" ng-hide="showCast">Cast: {{movieDetails.Actors.substring(0, movieDetails.Actors.indexOf(',') + 7)}}...</span></p>
             <p class = " greyColor" ng-click="showCast = !showCast" ng-hide="showCast">See full cast  <i class="fa fa-angle-right fa-1x icon" ></i></p>
         </div>
-        <div class = "Rating">
-            <span class = "greyLightColor">{{movieDetails.imdbRating}}</span></br><span class = "greyColor">imdb</span>
+        <!--<div class = "Rating">-->
+            <!--<span class = "greyLightColor">{{movieDetails.imdbRating}}</span></br><span class = "greyColor">imdb</span>-->
+        <!--</div>-->
+        <div class="c100 p{{imdbRating}} small green">
+            <span>{{movieDetails.imdbRating}}<br>imdb</span>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+            </div>
         </div>
         <div class = "fullCast" ng-show="showCast" ng-click="showCast = !showCast">
             <p>Cast: {{movieDetails.Actors}} <i class="fa fa-angle-up" ng-show="showCast"></i></p>

@@ -31,6 +31,9 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
 
     $http.post("https://cineramaserver.herokuapp.com/getMovie/", data).success(function(movieDetails, status) {
         $scope.movieDetails = movieDetails;
+        console.log($scope.movieDetails.imdbRating);
+        $scope.imdbRating = $scope.movieDetails.imdbRating * 10;
+        console.log($scope.movieDetails);
         console.log($scope.movieDetails);
     });
 

@@ -15,7 +15,7 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
             addDetailsMovie(data, i);
         }
 
-        console.log($scope.poster);
+        console.log(data);
 
     }).error(function () {
         return "error was happened or the result is empty";

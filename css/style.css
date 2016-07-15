@@ -447,6 +447,7 @@ a, a:active, a:focus {
 
 .greenColor {
     color: #008a5f;
+    border-color: #008a5f;
 }
 
 .greyColor {
