@@ -232,15 +232,15 @@
   /*margin: 0 0.1em 0.1em 0;*/
   /*background-color: transparent;*/
 
-  position: relative;
-  bottom: 115px;
+  position: absolute;
+  bottom: 275px;
   width: 0em;
   height: 1em;
   border-radius: 50%;
   float: left;
   margin: 0 0.1em 0.1em 0;
   background-color: transparent;
-  left: 240px;
+  left: 255px;
 
 
 }

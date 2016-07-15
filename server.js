@@ -11,5 +11,5 @@ app.use('/views', express.static(__dirname + '/views'));
 // app.set('port', process.env.PORT || 3000);
 // app.use('/', express.static('./'));
 
-app.use('/', express.static('./')).listen(process.env.PORT || 3000);
+app.use('/', express.static('./')).listen(process.env.PORT || 8000);
 console.log('Client server listening on port 8000 ..\n');
