@@ -5,33 +5,33 @@
         <a ui-sref="main">
             <span><i class="fa fa-arrow-left fa-2x container icon col-md-1"></i></span>
         </a>
-        <h4 class="col-md-8">{{movieDetails.Title}}</h4>
+        <h4 class="col-md-8">{{movieDetails.title}}</h4>
     </div>
 
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="{{movieTrailer}}"></iframe>
+        <iframe class="embed-responsive-item" src={{movieTrailer}}></iframe>
     </div>
 
     <div class = "container">
 
         <div class="movieDetailsOrder">
-            <p><span class=" greenColor">{{movieDetails.Genre}}</span><span class="greyColor"> {{movieDetails.Country}}</span></p>
-            <p><span class=" greyColor">Director:</span><span class="greyLightColor"> {{movieDetails.Director}}</span></p>
-            <p><span class=" greyColor" ng-hide="showCast">Cast: {{movieDetails.Actors.substring(0, movieDetails.Actors.indexOf(',') + 7)}}...</span></p>
+            <p><span class=" greenColor">{{movieDetails.genres}}</span><span class="greyColor"> {{movieDetails.country}}</span></p>
+            <p><span class=" greyColor">Director:</span><span class="greyLightColor"> {{movieDetails.director}}</span></p>
+            <p><span class=" greyColor" ng-hide="showCast">Cast: {{movieDetails.actors.substring(0, movieDetails.actors.indexOf(',') + 7)}}...</span></p>
             <p class = " greyColor" ng-click="showCast = !showCast" ng-hide="showCast">See full cast  <i class="fa fa-angle-right fa-1x icon" ></i></p>
         </div>
         <!--<div class = "Rating">-->
             <!--<span class = "greyLightColor">{{movieDetails.imdbRating}}</span></br><span class = "greyColor">imdb</span>-->
         <!--</div>-->
-        <div class="c100 p{{imdbRating}} small green">
-            <span>{{movieDetails.imdbRating}}<br>imdb</span>
+        <div class="c100 p{{movieDetails.rating}} small green">
+            <span>{{movieDetails.rating}}<br>imdb</span>
             <div class="slice">
                 <div class="bar"></div>
                 <div class="fill"></div>
             </div>
         </div>
         <div class = "fullCast" ng-show="showCast" ng-click="showCast = !showCast">
-            <p>Cast: {{movieDetails.Actors}} <i class="fa fa-angle-up" ng-show="showCast"></i></p>
+            <p>Cast: {{movieDetails.actors}} <i class="fa fa-angle-up" ng-show="showCast"></i></p>
         </div>
 
         <div class="review">

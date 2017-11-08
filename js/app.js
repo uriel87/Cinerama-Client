@@ -1,6 +1,3 @@
-/**
- * Created by user on 08/07/2016.
- */
 var app = angular.module('app', ['ui.router','ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider)  {

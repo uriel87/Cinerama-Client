@@ -20,7 +20,7 @@
     <div class="movieContextSelectSmall" ng-click="goToOrderPage(movie._id.name)" ng-repeat = "movie in movies | orderBy: ['-movies._id.time'] : 'true'" ng-if="$index > 3">
         <!--<a ui-sref="order({movie_name: movie._id.name })">-->
             <h4 class="movieTitle">{{movie._id.name}}</h4>
-            <img src="{{movie.Poster}}" class="imgBackground">
+            <img src="{{movie.poster}}" class="imgBackground">
             <div class="movieDetailsSmallDiv">
                 <p>{{movie._id.time.substring(11,19)}} </p>
                 <p>{{movie._id.cinema}}</p>
@@ -37,3 +37,8 @@
 
 
 </div>
+
+<!--Here is your key: f2ddaf46 -->
+<!--http://www.omdbapi.com/?apikey=f2ddaf46&t=Batman-->
+
+

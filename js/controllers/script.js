@@ -4,6 +4,7 @@
 
 
 $( document ).ready(function() {
+
 	setInterval(function() {
 		$( "#gbox" ).fadeOut('slow', function() {
 			}).fadeIn('slow', function() {
@@ -32,10 +33,6 @@ $( document ).ready(function() {
 	}, 40);
 
 });
-
-
-
-
 
 
 

@@ -24,9 +24,9 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
 
     function addDetailsMovie (data, i) {
         $http.post("https://cineramaserver.herokuapp.com/getMovie/", {name: data[i]._id.name}).success(function (MovieDetails) {
-            $scope.movies.push(angular.merge(MovieDetails, data[i]));
+            $scope.movies.push(angular.extend(MovieDetails, data[i]));
             var temp = {
-                "background-image" : "url("+ MovieDetails.Poster +")",
+                "background-image" : "url("+ MovieDetails.poster +")",
                 "background-repeat": "no-repeat",
                 "background-size": "100% 450px",
                 "background-position" : "0px 50px"

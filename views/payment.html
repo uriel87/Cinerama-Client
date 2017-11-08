@@ -37,8 +37,8 @@
 
         <div ng-repeat = "product in products" class="productBox">
             <span class="badge" ng-show="product.quantity > 1">+{{product.quantity}}</span>
+            <img src="{{product.image}}" alt="{{product.name}}">
             <nav>
-                <img src="{{product.image}}" alt="{{product.name}}">
                 <li>{{product.size}}</li>
                 <li>{{product.name}}</li>
             </nav>
